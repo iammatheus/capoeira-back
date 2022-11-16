@@ -1,7 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-async function startDB(){
-    await mongoose.connect('mongodb+srv://matheusferreira:a1b2c3d4e5@capoeiracluster.lsudwbw.mongodb.net/test');
+async function startDB() {
+  await mongoose
+    .connect(process.env.MONGO_URL)
+    .then(() => {
+      console.log("Conectado ao banco");
+    })
+    .catch((err) => {
+      console.log("Erro conexão banco: " + err);
+    });
 }
 
 module.exports = startDB;

@@ -1,6 +1,6 @@
-const app = require('./app');
-const Loaders = require('./loaders/index');
-const PORT = process.env.PORT || 3000
+require("dotenv/config");
+const app = require("./app");
+const Loaders = require("./loaders/index");
 
 Loaders.start();
-app.listen(PORT, () => console.log('Server is running...'));
+app.listen(process.env.PORT, () => console.log("Server is running..."));
