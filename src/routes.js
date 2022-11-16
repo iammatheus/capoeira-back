@@ -1,7 +1,9 @@
 const { Router } = require("express");
 const routes = Router();
+const VerifyToken = require('./middleware/usuario.middleware');
 
 const HomeController = require("./Controllers/HomeController");
+const UsuarioController = require("./Controllers/UsuarioController");
 const FiliadoController = require("./Controllers/FiliadoController");
 const EventoController = require("./Controllers/EventoController");
 const DiretoriaController = require("./Controllers/DiretoriaController");
@@ -15,6 +17,13 @@ routes.get("/home/eventos", HomeController.showEventos);
 routes.get("/home/diretorias", HomeController.showDiretorias);
 routes.get("/home/filiados", HomeController.showFiliados);
 
+// usuarios
+routes.post("/login", UsuarioController.requestLogin);
+routes.post("/usuarios", UsuarioController.store);
+routes.get("/usuarios/:id", VerifyToken, UsuarioController.index);
+routes.delete("/usuarios/:id", VerifyToken, UsuarioController.destroy);
+routes.put("/usuarios/update/:id", VerifyToken, UsuarioController.update);
+
 // filiados
 routes.post("/filiados", FiliadoController.store);
 routes.get("/filiados", FiliadoController.show);
@@ -25,6 +34,7 @@ routes.delete("/filiados/:id", FiliadoController.destroy);
 // eventos
 routes.post("/eventos", EventoController.store);
 routes.get("/eventos", EventoController.show);
+routes.get("/eventos/paginacao", EventoController.paginatedEvent);
 routes.get("/eventos/:id", EventoController.index);
 routes.put("/eventos/:id", EventoController.update);
 routes.delete("/eventos/:id", EventoController.destroy);
