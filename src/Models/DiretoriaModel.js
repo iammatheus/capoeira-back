@@ -22,11 +22,11 @@ const DiretoriaSchema = new Schema({
   },
   imagemUrl: {
     type: String,
-    required: true,
+    required: false,
   },
   userId: {
     type: String,
-    required: true,
+    required: false,
   }
 });
 

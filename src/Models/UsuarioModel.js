@@ -20,6 +20,10 @@ const UsuarioSchema = new Schema({
     type: String,
     required: false,
   },
+  userId: { 
+    type: String,
+    required: false,
+  }
 });
 
 const UsuarioModel = mongoose.model("usuarios", UsuarioSchema);

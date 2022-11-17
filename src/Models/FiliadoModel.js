@@ -10,9 +10,12 @@ const FiliadoSchema = new Schema({
   },
   imagem: {
     type: String,
-    required: true,
+    required: false,
   },
-  userId: String,
+  userId: { 
+    type: String,
+    required: false,
+  }
 });
 
 const FiliadoModel = mongoose.model("filiados", FiliadoSchema);

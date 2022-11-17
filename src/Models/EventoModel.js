@@ -18,7 +18,7 @@ const EventoSchema = new Schema({
   },
   imagemUrl: {
     type: String,
-    required: true,
+    required: false,
   },
   telefone: {
     type: String,
@@ -34,7 +34,7 @@ const EventoSchema = new Schema({
   },
   userId: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
