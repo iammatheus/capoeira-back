@@ -16,17 +16,17 @@ const EventoSchema = new Schema({
     type: Date,
     required: true,
   },
-  imagemUrl: {
+  imagem: {
     type: String,
     required: false,
   },
   telefone: {
     type: String,
-    required: false,
+    required: true,
   },
   email: {
     type: String,
-    required: false,
+    required: true,
   },
   descricao: {
     type: String,

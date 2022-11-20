@@ -16,11 +16,7 @@ const UsuarioSchema = new Schema({
     type: String,
     required: true,
   },
-  imagemUrl: {
-    type: String,
-    required: false,
-  },
-  userId: { 
+  imagem: {
     type: String,
     required: false,
   }

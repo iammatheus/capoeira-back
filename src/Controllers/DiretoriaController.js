@@ -28,7 +28,6 @@ class DiretoriaController {
     try {
       const { id } = req.params;
       const diretoria = await DiretoriaModel.findByIdAndUpdate(id, req.body);
-      console.log(diretoria)
 
       if (!diretoria)
         return res.status(404).json({ message: "Diretoria não existe." });

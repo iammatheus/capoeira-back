@@ -14,13 +14,13 @@ const DiretoriaSchema = new Schema({
   },
   descricao: {
     type: String,
-    required: false,
+    required: true,
   },
   instagram: {
     type: String,
     required: false,
   },
-  imagemUrl: {
+  imagem: {
     type: String,
     required: false,
   },
